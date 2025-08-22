@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדריך השוואת השקעות פנסיוניות - רועי רומנו</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Assistant', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-shadow {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #4f46e5, #7c3aed);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(45deg, #059669, #0d9488);
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3);
+        }
+        
+        .question-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .question-card:hover {
+            transform: translateY(-5px);
+            border-color: #4f46e5;
+        }
+        
+        .answer-btn {
+            transition: all 0.2s ease;
+        }
+        
+        .answer-btn:hover {
+            background-color: #4f46e5 !important;
+            color: white !important;
+        }
+        
+        .answer-btn.selected {
+            background-color: #4f46e5 !important;
+            color: white !important;
+        }
+        
+        .result-card {
+            background: linear-gradient(45deg, #f0f9ff, #e0f2fe);
+            border: 2px solid #0ea5e9;
+        }
+        
+        .warning-card {
+            background: linear-gradient(45deg, #fef3c7, #fde68a);
+            border: 2px solid #f59e0b;
+        }
+        
+        .success-card {
+            background: linear-gradient(45deg, #d1fae5, #a7f3d0);
+            border: 2px solid #10b981;
+        }
+    </style>
+</head>
+<body class="min-h-screen py-8">
+    <div class="container mx-auto px-4 max-w-6xl">
+        
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                מדריך השוואת השקעות פנסיוניות
+            </h1>
+            <p class="text-xl text-white opacity-90">
+                קופת גמל תיקון 190 vs פוליסת חיסכון
+            </p>
+            <p class="text-lg text-white opacity-75 mt-2">
+                רועי רומנו - מתכנן פיננסי
+            </p>
+        </div>
+
+        <!-- השוואה מקיפה -->
+        <div class="bg-white rounded-2xl card-shadow p-8 mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+                <i class="fas fa-balance-scale text-blue-600 mr-3"></i>
+                השוואה מקיפה
+            </h2>
+            
+            <!-- טבלת השוואה -->
+            <div class="overflow-x-auto mb-8">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="bg-gray-50">
+                            <th class="p-4 text-right font-bold text-gray-700 border-b">קריטריון השוואה</th>
+                            <th class="p-4 text-center font-bold text-blue-700 border-b">קופת גמל תיקון 190</th>
+                            <th class="p-4 text-center font-bold text-green-700 border-b">פוליסת חיסכון</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-4 font-semibold border-b">מגבלת הפקדה</td>
+                            <td class="p-4 text-center border-b">ללא מגבלה*</td>
+                            <td class="p-4 text-center border-b">ללא מגבלה</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-4 font-semibold border-b">מיסוי</td>
+                            <td class="p-4 text-center border-b">15% נומינלי</td>
+                            <td class="p-4 text-center border-b">25% ריאלי</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-4 font-semibold border-b">עלויות שנתיות</td>
+                            <td class="p-4 text-center border-b">0.6%-0.8%</td>
+                            <td class="p-4 text-center border-b">0.8%-1%</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-4 font-semibold border-b">נזילות</td>
+                            <td class="p-4 text-center border-b">נזילות מוגבלת - גיל 60+ וקצבה מזערית**</td>
+                            <td class="p-4 text-center border-b">נזילות מלאה</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-4 font-semibold border-b">סכום מומלץ</td>
+                            <td class="p-4 text-center border-b">מעל 400,000 ₪</td>
+                            <td class="p-4 text-center border-b">מעל 100,000 ₪</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-4 font-semibold border-b">אפשרויות משיכה</td>
+                            <td class="p-4 text-center border-b">המרה לקצבה פטורה ממס/אנונה/משיכת החלק המוכר</td>
+                            <td class="p-4 text-center border-b">משיכה גמישה/אנונה</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-4 font-semibold border-b">יתרונות מיוחדים</td>
+                            <td class="p-4 text-center border-b">ירושה פטורה ממס (עד גיל 75)</td>
+                            <td class="p-4 text-center border-b">סעיף 125ד לנולדי 1948 ומטה</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- הסברים -->
+            <div class="text-sm text-gray-600 space-y-2">
+                <p><strong>*</strong> על פי הנחיית רשות המסים, בסכומי הפקדה גבוהים (לפי גיל העמית במועד ההפקדה), משיכת הכספים בדרך של היוון קצבה מוכרת, תיעשה תוך פנייה לפקיד שומה ולא ישירות מול הקופה.</p>
+                <p><strong>**</strong> הגדרת קצבה מזערית לתיקון 190: קצבה מחיסכון פנסיוני או פנסיה תקציבית בגובה 5,183 ₪ לחודש (2025), מוכחת על ידי 3 תלושי שכר אחרונים.</p>
+            </div>
+        </div>
+
+        <!-- יתרונות וחסרונות -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <!-- תיקון 190 -->
+            <div class="bg-white rounded-2xl card-shadow p-6">
+                <h3 class="text-2xl font-bold text-blue-700 mb-6 text-center">
+                    <i class="fas fa-university mr-2"></i>
+                    קופת גמל תיקון 190
+                </h3>
+                
+                <div class="mb-6">
+                    <h4 class="text-lg font-semibold text-green-600 mb-3 flex items-center">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        יתרונות
+                    </h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-plus text-green-500 mt-1 ml-2"></i>
+                            <span>מס נומינלי 15% (עדיף באינפלציה נמוכה)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plus text-green-500 mt-1 ml-2"></i>
+                            <span>אפשרות קצבה פטורה ממס</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plus text-green-500 mt-1 ml-2"></i>
+                            <span>יתרונות ירושה משמעותיים</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plus text-green-500 mt-1 ml-2"></i>
+                            <span>עלויות נמוכות יחסית</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-red-600 mb-3 flex items-center">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        חסרונות
+                    </h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-minus text-red-500 mt-1 ml-2"></i>
+                            <span>38,412 ₪ נעולים בכל הפקדה שנתית</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-minus text-red-500 mt-1 ml-2"></i>
+                            <span>דרישת 3 תלושי שכר לכל משיכה</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-minus text-red-500 mt-1 ml-2"></i>
+                            <span>סיכון להתקע אם הקצבה המזערית לא מספיקה למשיכה</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-minus text-red-500 mt-1 ml-2"></i>
+                            <span>משיכה רק מגיל 60 עם קצבה מזערית</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- פוליסת חיסכון -->
+            <div class="bg-white rounded-2xl card-shadow p-6">
+                <h3 class="text-2xl font-bold text-green-700 mb-6 text-center">
+                    <i class="fas fa-piggy-bank mr-2"></i>
+                    פוליסת חיסכון
+                </h3>
+                
+                <div class="mb-6">
+                    <h4 class="text-lg font-semibold text-green-600 mb-3 flex items-center">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        יתרונות
+                    </h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-plus text-green-500 mt-1 ml-2"></i>
+                            <span>נזילות מלאה בכל עת</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plus text-green-500 mt-1 ml-2"></i>
+                            <span>סעיף 125ד - החזר 3,750-4,590 ₪ שנתי לנולדי 1948 ומטה</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plus text-green-500 mt-1 ml-2"></i>
+                            <span>מס ריאלי 25% (עדיף באינפלציה גבוהה)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plus text-green-500 mt-1 ml-2"></i>
+                            <span>ללא תנאי גיל או קצבה למשיכה</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-red-600 mb-3 flex items-center">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        חסרונות
+                    </h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-minus text-red-500 mt-1 ml-2"></i>
+                            <span>עלויות גבוהות יותר</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-minus text-red-500 mt-1 ml-2"></i>
+                            <span>ללא יתרונות ירושה מיוחדים</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-minus text-red-500 mt-1 ml-2"></i>
+                            <span>סעיף 125ד אינו אוטומטי - יש לבקש</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-minus text-red-500 mt-1 ml-2"></i>
+                            <span>ללא אפשרות קצבה פטורה ממס</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- סימולציה אישית -->
+        <div class="bg-white rounded-2xl card-shadow p-8 mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">
+                <i class="fas fa-calculator text-purple-600 mr-3"></i>
+                סימולציה אישית
+            </h2>
+            
+            <div class="text-center mb-8">
+                <p class="text-red-600 font-semibold bg-red-50 p-3 rounded-lg border border-red-200">
+                    ⚠️ מדובר בסימולציה למידע בלבד והיא אינה מהווה המלצה או תחליף לייעוץ אישי פרטני על ידי בעל רישיון
+                </p>
+            </div>
+
+            <div id="simulationContainer">
+                <div id="question1" class="question-card bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl mb-6">
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">
+                        <i class="fas fa-user mr-2 text-blue-600"></i>
+                        שאלה 1: מה גילך?
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-blue-500 transition-all" 
+                                onclick="selectAnswer('age', 'under60', this)">
+                            <i class="fas fa-clock mr-2"></i>
+                            מתחת לגיל 60
+                        </button>
+                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-blue-500 transition-all" 
+                                onclick="selectAnswer('age', 'over60', this)">
+                            <i class="fas fa-birthday-cake mr-2"></i>
+                            60 ומעלה
+                        </button>
+                    </div>
+                </div>
+
+                <div id="question2" class="question-card bg-gradient-to-r from-green-50 to-teal-50 p-6 rounded-xl mb-6" style="display: none;">
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">
+                        <i class="fas fa-money-bill-wave mr-2 text-green-600"></i>
+                        שאלה 2: האם יש לך, או צפויה להיות לך קצבת פנסיה, מעל 6,000 ש"ח לפחות?
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-green-500 transition-all" 
+                                onclick="selectAnswer('pension', 'yes', this)">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            כן, יש לי או צפויה
+                        </button>
+                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-green-500 transition-all" 
+                                onclick="selectAnswer('pension', 'no', this)">
+                            <i class="fas fa-times-circle mr-2"></i>
+                            לא / לא בטוח
+                        </button>
+                    </div>
+                </div>
+
+                <div id="question3" class="question-card bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-xl mb-6" style="display: none;">
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">
+                        <i class="fas fa-calendar mr-2 text-yellow-600"></i>
+                        שאלה 3: האם נולדת בשנת 1948 או לפני כן?
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-yellow-500 transition-all" 
+                                onclick="selectAnswer('birth_year', '1948_before', this)">
+                            <i class="fas fa-certificate mr-2"></i>
+                            כן (זכאי לסעיף 125ד)
+                        </button>
+                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-yellow-500 transition-all" 
+                                onclick="selectAnswer('birth_year', 'after_1948', this)">
+                            <i class="fas fa-times mr-2"></i>
+                            לא
+                        </button>
+                    </div>
+                </div>
+
+                <div id="question4" class="question-card bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl mb-6" style="display: none;">
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">
+                        <i class="fas fa-bullseye mr-2 text-purple-600"></i>
+                        שאלה 4: מה המטרה העיקרית עבור הכסף?
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition-all" 
+                                onclick="selectAnswer('purpose', 'pension_free', this)">
+                            <i class="fas fa-heart mr-2"></i>
+                            קצבה פטורה ממס לעתיד
+                        </button>
+                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition-all" 
+                                onclick="selectAnswer('purpose', 'withdrawal', this)">
+                            <i class="fas fa-hand-holding-usd mr-2"></i>
+                            משיכה חד-פעמית כשצריך
+                        </button>
+                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition-all" 
+                                onclick="selectAnswer('purpose', 'inheritance', this)">
+                            <i class="fas fa-users mr-2"></i>
+                            ירושה למשפחה
+                        </button>
+                    </div>
+                </div>
+
+                <div id="question5" class="question-card bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-xl mb-6" style="display: none;">
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">
+                        <i class="fas fa-coins mr-2 text-indigo-600"></i>
+                        שאלה 5: מה גובה הסכום שאתה מתכנן להשקיע?
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-indigo-500 transition-all" 
+                                onclick="selectAnswer('amount', 'medium', this)">
+                            <i class="fas fa-chart-line mr-2"></i>
+                            100-400 אלף ש"ח
+                        </button>
+                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-indigo-500 transition-all" 
+                                onclick="selectAnswer('amount', 'high', this)">
+                            <i class="fas fa-trophy mr-2"></i>
+                            400 אלף ש"ח ומעלה
+                        </button>
+                    </div>
+                </div>
+
+                <div id="resultContainer" style="display: none;" class="mt-8">
+                    <div class="result-card p-6 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-4 text-center text-blue-800">
+                            <i class="fas fa-lightbulb mr-2"></i>
+                            המלצה מותאמת אישית
+                        </h3>
+                        <div id="recommendationContent"></div>
+                        
+                        <div class="mt-6 text-center">
+                            <button class="btn-primary text-white px-8 py-3 rounded-lg font-semibold" 
+                                    onclick="resetSimulation()">
+                                <i class="fas fa-redo mr-2"></i>
+                                התחל מחדש
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- יצירת קשר -->
+        <div class="bg-white rounded-2xl card-shadow p-8 mb-12">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-question-circle text-orange-600 mr-3"></i>
+                    עדיין מתלבטים?
+                </h2>
+                <p class="text-lg text-gray-600 mb-6">
+                    צרו איתי קשר לייעוץ מקצועי ומותאם אישית
+                </p>
+                
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-6">
+                    <a href="tel:052-8089808" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold flex items-center">
+                        <i class="fas fa-phone mr-2"></i>
+                        052-8089808
+                    </a>
+                    <a href="https://wa.me/972528089808" class="btn-secondary text-white px-8 py-4 rounded-lg font-semibold flex items-center">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        WhatsApp
+                    </a>
+                    <a href="mailto:roeir@ar-fo.co.il" class="bg-gray-600 hover:bg-gray-700 text-white px-8 py-4 rounded-lg font-semibold flex items-center">
+                        <i class="fas fa-envelope mr-2"></i>
+                        roeir@ar-fo.co.il
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- דיסקליימר -->
+        <div class="bg-gray-100 rounded-2xl p-6 text-sm text-gray-600 text-center">
+            <h3 class="font-bold text-gray-800 mb-3">⚠️ הודעה חשובה - דיסקליימר</h3>
+            <p class="mb-4">
+                המידע במדריך זה הוא לצרכי הסברה והשוואה בלבד ואינו מהווה ייעוץ פיננסי אישי, שיווק פנסיוני, המלצת השקעה או תחליף לייעוץ מקצועי. המידע אינו מתיימר לכלול את כל הפרטים הנדרשים לקבלת החלטות פיננסיות. 
+                לפני קבלת החלטות כלכליות חשובות, מומלץ בחום להתייעץ עם מתכנן פיננסי מוסמך או בעל רישיון פנסיוני המכיר לעומק את המצב האישי, הצרכים הספציפיים והנסיבות המיוחדות של כל לקוח.
+            </p>
+            <div class="border-t pt-4 mt-4">
+                <p class="font-semibold text-gray-800">
+                    רועי רומנו - מתכנן פיננסי
+                </p>
+                <p>
+                    <a href="mailto:roeir@ar-fo.co.il" class="text-blue-600 hover:underline">roeir@ar-fo.co.il</a> | 
+                    <a href="tel:052-8089808" class="text-blue-600 hover:underline">052-8089808</a>
+                </p>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        let currentAnswers = {};
+        let currentQuestion = 1;
+
+        function selectAnswer(questionType, value, element) {
+            // Remove selected class from all buttons in this question
+            const questionContainer = element.closest('.question-card');
+            questionContainer.querySelectorAll('.answer-btn').forEach(btn => {
+                btn.classList.remove('selected', 'bg-blue-600', 'text-white');
+            });
+            
+            // Add selected class to clicked button
+            element.classList.add('selected', 'bg-blue-600', 'text-white');
+            
+            // Store answer
+            currentAnswers[questionType] = value;
+            
+            // Show next question after delay
+            setTimeout(() => {
+                showNextQuestion();
+            }, 500);
+        }
+
+        function showNextQuestion() {
+            if (currentQuestion === 1) {
+                document.getElementById('question2').style.display = 'block';
+                currentQuestion = 2;
+            } else if (currentQuestion === 2) {
+                // Only show birth year question if over 60
+                if (currentAnswers.age === 'over60') {
+                    document.getElementById('question3').style.display = 'block';
+                    currentQuestion = 3;
+                } else {
+                    document.getElementById('question4').style.display = 'block';
+                    currentQuestion = 4;
+                }
+            } else if (currentQuestion === 3) {
+                document.getElementById('question4').style.display = 'block';
+                currentQuestion = 4;
+            } else if (currentQuestion === 4) {
+                document.getElementById('question5').style.display = 'block';
+                currentQuestion = 5;
+            } else if (currentQuestion === 5) {
+                showRecommendation();
+            }
+        }
+
+        function showRecommendation() {
+            let recommendation = generateRecommendation();
+            document.getElementById('recommendationContent').innerHTML = recommendation;
+            document.getElementById('resultContainer').style.display = 'block';
+            
+            // Scroll to result
+            document.getElementById('resultContainer').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        function generateRecommendation() {
+            // Special case: under 60 + wants pension-free income
+            if (currentAnswers.age === 'under60' && currentAnswers.purpose === 'pension_free') {
+                return `
+                    <div class="warning-card p-6 rounded-lg mb-4">
+                        <h4 class="font-bold text-orange-800 mb-3">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>
+                            המלצה זו דורשת ייעוץ מקצועי
+                        </h4>
+                        <p class="text-orange-700">
+                            בהתבסס על גילך ועל המטרה לקבלת קצבה פטורה ממס, המלצה זו דורשת ייעוץ פנסיוני מקצועי המתחשב במצב האישי שלך.
+                            אנו ממליצים ליצור קשר לייעוץ מותאם אישית.
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <a href="tel:052-8089808" class="btn-primary text-white px-6 py-3 rounded-lg font-semibold">
+                            <i class="fas fa-phone mr-2"></i>
+                            יצירת קשר לייעוץ
+                        </a>
+                    </div>
+                `;
+            }
+
+            // Special case: inheritance goal
+            if (currentAnswers.purpose === 'inheritance') {
+                return `
+                    <div class="success-card p-6 rounded-lg mb-4">
+                        <h4 class="font-bold text-green-800 mb-3">
+                            <i class="fas fa-users mr-2"></i>
+                            המלצה: תיקון 190 - האפשרות המועדפת לירושה
+                        </h4>
+                        <p class="text-green-700 mb-4">
+                            בהתבסס על מטרת הירושה, תיקון 190 הוא הבחירה המועדפת בשל יתרונות הירושה המיוחדים:
+                        </p>
+                        <ul class="text-green-700 space-y-2">
+                            <li>• ירושה פטורה ממס עד גיל 75</li>
+                            <li>• מס מופחת של 15% אחרי גיל 75</li>
+                            <li>• אפשרות להמרת היתרה לקצבה על שם היורשים</li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+            // Regular logic
+            let recommendation = '';
+            let preferredOption = '';
+            
+            // Determine preferred option based on answers
+            if (currentAnswers.age === 'over60' && currentAnswers.pension === 'yes') {
+                if (currentAnswers.birth_year === '1948_before') {
+                    preferredOption = 'פוליסת חיסכון';
+                    recommendation = `
+                        <div class="success-card p-6 rounded-lg mb-4">
+                            <h4 class="font-bold text-green-800 mb-3">
+                                <i class="fas fa-piggy-bank mr-2"></i>
+                                המלצה: פוליסת חיסכון
+                            </h4>
+                            <p class="text-green-700 mb-4">
+                                בהתבסס על התשובות שלך, פוליסת חיסכון נראית מתאימה יותר:
+                            </p>
+                            <ul class="text-green-700 space-y-2">
+                                <li>• זכאות לסעיף 125ד - החזר מס שנתי של 3,750-4,590 ₪</li>
+                                <li>• נזילות מלאה ללא תנאים</li>
+                                <li>• ללא סכום נעול</li>
+                                <li>• מתאים לסביבת האינפלציה הנוכחית</li>
+                            </ul>
+                        </div>
+                    `;
+                } else {
+                    preferredOption = 'תיקון 190';
+                    recommendation = `
+                        <div class="result-card p-6 rounded-lg mb-4">
+                            <h4 class="font-bold text-blue-800 mb-3">
+                                <i class="fas fa-university mr-2"></i>
+                                המלצה: תיקון 190
+                            </h4>
+                            <p class="text-blue-700 mb-4">
+                                בהתבסס על התשובות שלך, תיקון 190 מתאים:
+                            </p>
+                            <ul class="text-blue-700 space-y-2">
+                                <li>• יש לך קצבה מזערית הנדרשת</li>
+                                <li>• אפשרות לקצבה פטורה ממס</li>
+                                <li>• עלויות נמוכות יחסית</li>
+                            </ul>
+                            <div class="mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                                <p class="text-yellow-800 text-sm">
+                                    <i class="fas fa-exclamation-circle mr-2"></i>
+                                    <strong>שים לב:</strong> 38,412 ₪ מכל הפקדה יהיו נעולים ודרושים 3 תלושי שכר לכל משיכה.
+                                </p>
+                            </div>
+                        </div>
+                    `;
+                }
+            } else if (currentAnswers.pension === 'no') {
+                preferredOption = 'פוליסת חיסכון';
+                recommendation = `
+                    <div class="success-card p-6 rounded-lg mb-4">
+                        <h4 class="font-bold text-green-800 mb-3">
+                            <i class="fas fa-piggy-bank mr-2"></i>
+                            המלצה: פוליסת חיסכון
+                        </h4>
+                        <p class="text-green-700 mb-4">
+                            מכיוון שאין לך קצבה מזערית הנדרשת לתיקון 190:
+                        </p>
+                        <ul class="text-green-700 space-y-2">
+                            <li>• פוליסת חיסכון מאפשרת נזילות מלאה</li>
+                            <li>• ללא תנאי גיל או קצבה למשיכה</li>
+                            <li>• מתאים לצרכים גמישים</li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+            // Add advice for high amounts
+            if (currentAnswers.amount === 'high') {
+                recommendation += `
+                    <div class="result-card p-6 rounded-lg mt-4">
+                        <h4 class="font-bold text-purple-800 mb-3">
+                            <i class="fas fa-chart-pie mr-2"></i>
+                            המלצה נוספת - פיזור השקעות
+                        </h4>
+                        <p class="text-purple-700">
+                            בסכומים גבוהים מומלץ לשקול פיזור בין שני המוצרים לניצול יתרונות כל אחד.
+                            מומלץ להתייעץ עם בעל רישיון לתכנון מיטבי.
+                        </p>
+                    </div>
+                `;
+            }
+
+            return recommendation;
+        }
+
+        function resetSimulation() {
+            currentAnswers = {};
+            currentQuestion = 1;
+            
+            // Hide all questions except first
+            for (let i = 2; i <= 5; i++) {
+                document.getElementById(`question${i}`).style.display = 'none';
+            }
+            document.getElementById('resultContainer').style.display = 'none';
+            
+            // Reset all buttons
+            document.querySelectorAll('.answer-btn').forEach(btn => {
+                btn.classList.remove('selected', 'bg-blue-600', 'text-white');
+            });
+            
+            // Scroll to top of simulation
+            document.getElementById('simulationContainer').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('מדריך השוואת השקעות פנסיוניות נטען בהצלחה');
+        });
+    </script>
+</body>
+</html>
