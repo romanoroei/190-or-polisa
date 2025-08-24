@@ -56,13 +56,17 @@
         }
         
         .answer-btn:hover {
-            background-color: #4f46e5 !important;
+            background-color: #7c3aed !important;
             color: white !important;
+            border-color: #7c3aed !important;
+            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.25) !important;
         }
         
         .answer-btn.selected {
-            background-color: #4f46e5 !important;
+            background-color: #7c3aed !important;
             color: white !important;
+            border-color: #7c3aed !important;
+            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.25) !important;
         }
         
         .result-card {
@@ -294,18 +298,19 @@
             </div>
 
             <div id="simulationContainer">
+                
                 <div id="question1" class="question-card bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl mb-6">
                     <h3 class="text-xl font-bold mb-4 text-gray-800">
                         <i class="fas fa-user mr-2 text-blue-600"></i>
-                        שאלה 1: מה גילך?
+                        מה גילך?
                     </h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-blue-500 transition-all" 
+                        <button type="button" class="answer-btn bg-white p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition-all focus:outline-none focus:ring-2 focus:ring-purple-500" aria-pressed="false" 
                                 onclick="selectAnswer('age', 'under60', this)">
                             <i class="fas fa-clock mr-2"></i>
                             מתחת לגיל 60
                         </button>
-                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-blue-500 transition-all" 
+                        <button type="button" class="answer-btn bg-white p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition-all focus:outline-none focus:ring-2 focus:ring-purple-500" aria-pressed="false" 
                                 onclick="selectAnswer('age', 'over60', this)">
                             <i class="fas fa-birthday-cake mr-2"></i>
                             60 ומעלה
@@ -316,15 +321,15 @@
                 <div id="question2" class="question-card bg-gradient-to-r from-green-50 to-teal-50 p-6 rounded-xl mb-6" style="display: none;">
                     <h3 class="text-xl font-bold mb-4 text-gray-800">
                         <i class="fas fa-money-bill-wave mr-2 text-green-600"></i>
-                        שאלה 2: האם יש לך, או צפויה להיות לך קצבת פנסיה, מעל 6,000 ש"ח לפחות?
+                        האם יש לך, או צפויה להיות לך קצבת פנסיה, מעל 6,000 ש"ח לפחות?
                     </h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-green-500 transition-all" 
+                        <button type="button" class="answer-btn bg-white p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition-all focus:outline-none focus:ring-2 focus:ring-purple-500" aria-pressed="false" 
                                 onclick="selectAnswer('pension', 'yes', this)">
                             <i class="fas fa-check-circle mr-2"></i>
                             כן, יש לי או צפויה
                         </button>
-                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-green-500 transition-all" 
+                        <button type="button" class="answer-btn bg-white p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition-all focus:outline-none focus:ring-2 focus:ring-purple-500" aria-pressed="false" 
                                 onclick="selectAnswer('pension', 'no', this)">
                             <i class="fas fa-times-circle mr-2"></i>
                             לא / לא בטוח
@@ -335,15 +340,15 @@
                 <div id="question3" class="question-card bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-xl mb-6" style="display: none;">
                     <h3 class="text-xl font-bold mb-4 text-gray-800">
                         <i class="fas fa-calendar mr-2 text-yellow-600"></i>
-                        שאלה 3: האם נולדת בשנת 1948 או לפני כן?
+                        האם נולדת בשנת 1948 או לפני כן?
                     </h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-yellow-500 transition-all" 
+                        <button type="button" class="answer-btn bg-white p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition-all focus:outline-none focus:ring-2 focus:ring-purple-500" aria-pressed="false" 
                                 onclick="selectAnswer('birth_year', '1948_before', this)">
                             <i class="fas fa-certificate mr-2"></i>
                             כן (זכאי לסעיף 125ד)
                         </button>
-                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-yellow-500 transition-all" 
+                        <button type="button" class="answer-btn bg-white p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition-all focus:outline-none focus:ring-2 focus:ring-purple-500" aria-pressed="false" 
                                 onclick="selectAnswer('birth_year', 'after_1948', this)">
                             <i class="fas fa-times mr-2"></i>
                             לא
@@ -354,20 +359,20 @@
                 <div id="question4" class="question-card bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl mb-6" style="display: none;">
                     <h3 class="text-xl font-bold mb-4 text-gray-800">
                         <i class="fas fa-bullseye mr-2 text-purple-600"></i>
-                        שאלה 4: מה המטרה העיקרית עבור הכסף?
+                        מה המטרה העיקרית עבור הכסף?
                     </h3>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition-all" 
+                        <button type="button" class="answer-btn bg-white p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition-all focus:outline-none focus:ring-2 focus:ring-purple-500" aria-pressed="false" 
                                 onclick="selectAnswer('purpose', 'pension_free', this)">
                             <i class="fas fa-heart mr-2"></i>
                             קצבה פטורה ממס לעתיד
                         </button>
-                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition-all" 
+                        <button type="button" class="answer-btn bg-white p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition-all focus:outline-none focus:ring-2 focus:ring-purple-500" aria-pressed="false" 
                                 onclick="selectAnswer('purpose', 'withdrawal', this)">
                             <i class="fas fa-hand-holding-usd mr-2"></i>
                             משיכה חד-פעמית כשצריך
                         </button>
-                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition-all" 
+                        <button type="button" class="answer-btn bg-white p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition-all focus:outline-none focus:ring-2 focus:ring-purple-500" aria-pressed="false" 
                                 onclick="selectAnswer('purpose', 'inheritance', this)">
                             <i class="fas fa-users mr-2"></i>
                             הורשה למשפחה
@@ -378,15 +383,15 @@
                 <div id="question5" class="question-card bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-xl mb-6" style="display: none;">
                     <h3 class="text-xl font-bold mb-4 text-gray-800">
                         <i class="fas fa-coins mr-2 text-indigo-600"></i>
-                        שאלה 5: מה גובה הסכום שאתה מתכנן להשקיע?
+                        מה גובה הסכום שאתה מתכנן להשקיע?
                     </h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-indigo-500 transition-all" 
+                        <button type="button" class="answer-btn bg-white p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition-all focus:outline-none focus:ring-2 focus:ring-purple-500" aria-pressed="false" 
                                 onclick="selectAnswer('amount', 'medium', this)">
                             <i class="fas fa-chart-line mr-2"></i>
                             100-400 אלף ש"ח
                         </button>
-                        <button class="answer-btn p-4 border-2 border-gray-300 rounded-lg hover:border-indigo-500 transition-all" 
+                        <button type="button" class="answer-btn bg-white p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition-all focus:outline-none focus:ring-2 focus:ring-purple-500" aria-pressed="false" 
                                 onclick="selectAnswer('amount', 'high', this)">
                             <i class="fas fa-trophy mr-2"></i>
                             400 אלף ש"ח ומעלה
@@ -465,16 +470,19 @@
     <script>
         let currentAnswers = {};
         let currentQuestion = 1;
+            updateProgress();
 
         function selectAnswer(questionType, value, element) {
             // Remove selected class from all buttons in this question
             const questionContainer = element.closest('.question-card');
             questionContainer.querySelectorAll('.answer-btn').forEach(btn => {
-                btn.classList.remove('selected', 'bg-blue-600', 'text-white');
+                btn.classList.remove('selected','bg-purple-600','bg-blue-600','text-white');
+                btn.setAttribute('aria-pressed','false');
             });
             
             // Add selected class to clicked button
-            element.classList.add('selected', 'bg-blue-600', 'text-white');
+            element.classList.add('selected', 'bg-purple-600', 'text-white');
+            element.setAttribute('aria-pressed','true');
             
             // Store answer
             currentAnswers[questionType] = value;
@@ -485,18 +493,30 @@
             }, 500);
         }
 
+        function updateProgress() {
+            var step = currentQuestion;
+            if (step > 5) step = 5;
+            var el = document.getElementById('progress');
+            var sr = document.getElementById('sr-progress');
+            if (el) el.textContent = 'שאלה ' + step + ' מתוך 5';
+            if (sr) sr.textContent = 'התקדמות: שאלה ' + step + ' מתוך 5';
+        }
+
         function showNextQuestion() {
             if (currentQuestion === 1) {
                 document.getElementById('question2').style.display = 'block';
                 currentQuestion = 2;
+                updateProgress();
             } else if (currentQuestion === 2) {
                 // Only show birth year question if over 60
                 if (currentAnswers.age === 'over60') {
                     document.getElementById('question3').style.display = 'block';
                     currentQuestion = 3;
+                updateProgress();
                 } else {
                     document.getElementById('question4').style.display = 'block';
                     currentQuestion = 4;
+                updateProgress();
                 }
             } else if (currentQuestion === 3) {
                 document.getElementById('question4').style.display = 'block';
@@ -504,6 +524,7 @@
             } else if (currentQuestion === 4) {
                 document.getElementById('question5').style.display = 'block';
                 currentQuestion = 5;
+                updateProgress();
             } else if (currentQuestion === 5) {
                 showRecommendation();
             }
@@ -521,7 +542,7 @@
         }
 
         function generateRecommendation() {
-            // Special case: under 60 + wants pension-free income
+            // Special case: under 60 + wants pension-free income (returns early)
             if (currentAnswers.age === 'under60' && currentAnswers.purpose === 'pension_free') {
                 return `
                     <div class="warning-card p-6 rounded-lg mb-4">
@@ -543,9 +564,43 @@
                 `;
             }
 
-            // Special case: inheritance goal
-            if (currentAnswers.purpose === 'inheritance') {
-                return `
+            // Primary recommendation logic
+            let recommendation = '';
+            let primaryType = ''; // 'policy' | 't190'
+
+            // under60 + pension yes + one-time withdrawal → Policy
+            if (currentAnswers.age === 'under60'
+                && currentAnswers.pension === 'yes'
+                && currentAnswers.purpose === 'withdrawal') {
+
+                recommendation = `
+                    <div class="success-card p-6 rounded-lg mb-4">
+                        <h4 class="font-bold text-green-800 mb-3">
+                            <i class="fas fa-piggy-bank mr-2"></i>
+                            המלצה: פוליסת חיסכון (נטייה ברורה במשיכה חד-פעמית מתחת לגיל 60)
+                        </h4>
+                        <p class="text-green-700 mb-4">
+                            מאחר שהמטרה היא <strong>משיכה חד-פעמית</strong> ואת/ה <strong>מתחת לגיל 60</strong>, פוליסת חיסכון מעניקה <strong>נזילות מלאה</strong>, ללא תנאי גיל או קצבה, וגמישות במשיכות חלקיות/מלאות.
+                        </p>
+                        <ul class="text-green-700 space-y-2">
+                            <li>• נזילות מלאה בכל עת (ללא דרישת קצבה מזערית)</li>
+                            <li>• ללא סכום נעול בכל הפקדה</li>
+                            <li>• משיכה פשוטה לביצוע בעת הצורך</li>
+                        </ul>
+                        <div class="mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                            <p class="text-yellow-800 text-sm">
+                                <i class="fas fa-info-circle mr-2"></i>
+                                שיקולי מס ועלויות ניהול עלולים להשתנות בין גופים ומסלולים; מומלץ לבדוק פרטים לפני החלטה.
+                            </p>
+                        </div>
+                    </div>
+                `;
+                primaryType = 'policy';
+            }
+
+            // inheritance goal → T190 primary
+            if (!recommendation && currentAnswers.purpose === 'inheritance') {
+                recommendation = `
                     <div class="success-card p-6 rounded-lg mb-4">
                         <h4 class="font-bold text-green-800 mb-3">
                             <i class="fas fa-users mr-2"></i>
@@ -557,20 +612,61 @@
                         <ul class="text-green-700 space-y-2">
                             <li>• הורשה פטורה ממס עד גיל 75</li>
                             <li>• מס מופחת של 15% בהורשה אחרי גיל 75</li>
-                            <li>• אפשרות להעברת הקופה על שם המוטבים ללא אירוע מס</li>
+                            <li>• אפשרות להעברה בין דורית על שם המוטבים ללא אירוע מס</li>
                         </ul>
                     </div>
                 `;
+                primaryType = 't190';
             }
 
             // Regular logic
-            let recommendation = '';
-            let preferredOption = '';
-            
-            // Determine preferred option based on answers
-            if (currentAnswers.age === 'over60' && currentAnswers.pension === 'yes') {
-                if (currentAnswers.birth_year === '1948_before') {
-                    preferredOption = 'פוליסת חיסכון';
+            if (!recommendation) {
+                if (currentAnswers.age === 'over60' && currentAnswers.pension === 'yes') {
+                    if (currentAnswers.birth_year === '1948_before') {
+                        recommendation = `
+                            <div class="success-card p-6 rounded-lg mb-4">
+                                <h4 class="font-bold text-green-800 mb-3">
+                                    <i class="fas fa-piggy-bank mr-2"></i>
+                                    המלצה: פוליסת חיסכון
+                                </h4>
+                                <p class="text-green-700 mb-4">
+                                    בהתבסס על התשובות שלך, פוליסת חיסכון נראית מתאימה יותר:
+                                </p>
+                                <ul class="text-green-700 space-y-2">
+                                    <li>• זכאות לסעיף 125ד - החזר מס שנתי של 3,750-4,590 ₪</li>
+                                    <li>• נזילות מלאה ללא תנאים</li>
+                                    <li>• ללא סכום נעול</li>
+                                    <li>• מתאים לסביבת האינפלציה הנוכחית</li>
+                                </ul>
+                            </div>
+                        `;
+                        primaryType = 'policy';
+                    } else {
+                        recommendation = `
+                            <div class="result-card p-6 rounded-lg mb-4">
+                                <h4 class="font-bold text-blue-800 mb-3">
+                                    <i class="fas fa-university mr-2"></i>
+                                    המלצה: תיקון 190
+                                </h4>
+                                <p class="text-blue-700 mb-4">
+                                    בהתבסס על התשובות שלך, תיקון 190 עשוי להיות מתאים:
+                                </p>
+                                <ul class="text-blue-700 space-y-2">
+                                    <li>• יש לך את הקצבה המזערית הנדרשת</li>
+                                    <li>• אפשרות לקצבה פטורה ממס</li>
+                                    <li>• עלויות נמוכות יחסית</li>
+                                </ul>
+                                <div class="mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                                    <p class="text-yellow-800 text-sm">
+                                        <i class="fas fa-exclamation-circle mr-2"></i>
+                                        <strong>שים לב:</strong> 38,412 ₪ מכל הפקדה יהיו נעולים ודרושים 3 תלושי שכר לכל משיכה. אם הסכום נמוך מ300אלף מומלץ להתייעץ לקבלת אפשרויות נוספות.
+                                    </p>
+                                </div>
+                            </div>
+                        `;
+                        primaryType = 't190';
+                    }
+                } else if (currentAnswers.pension === 'no') {
                     recommendation = `
                         <div class="success-card p-6 rounded-lg mb-4">
                             <h4 class="font-bold text-green-800 mb-3">
@@ -578,62 +674,33 @@
                                 המלצה: פוליסת חיסכון
                             </h4>
                             <p class="text-green-700 mb-4">
-                                בהתבסס על התשובות שלך, פוליסת חיסכון נראית מתאימה יותר:
+                                מכיוון שאין לך קצבה מזערית הנדרשת לתיקון 190:
                             </p>
                             <ul class="text-green-700 space-y-2">
-                                <li>• זכאות לסעיף 125ד - החזר מס שנתי של 3,750-4,590 ₪</li>
-                                <li>• נזילות מלאה ללא תנאים</li>
-                                <li>• ללא סכום נעול</li>
-                                <li>• מתאים לסביבת האינפלציה הנוכחית</li>
+                                <li>• פוליסת חיסכון מאפשרת נזילות מלאה</li>
+                                <li>• ללא תנאי גיל או קצבה למשיכה</li>
+                                <li>• מתאימה לצרכים גמישים</li>
                             </ul>
                         </div>
                     `;
-                } else {
-                    preferredOption = 'תיקון 190';
-                    recommendation = `
-                        <div class="result-card p-6 rounded-lg mb-4">
-                            <h4 class="font-bold text-blue-800 mb-3">
-                                <i class="fas fa-university mr-2"></i>
-                                המלצה: תיקון 190
-                            </h4>
-                            <p class="text-blue-700 mb-4">
-                                בהתבסס על התשובות שלך, תיקון 190 עשוי להיות מתאים:
-                            </p>
-                            <ul class="text-blue-700 space-y-2">
-                                <li>• יש לך את הקצבה המזערית הנדרשת</li>
-                                <li>• אפשרות לקצבה פטורה ממס</li>
-                                <li>• עלויות נמוכות יחסית</li>
-                            </ul>
-                            <div class="mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-                                <p class="text-yellow-800 text-sm">
-                                    <i class="fas fa-exclamation-circle mr-2"></i>
-                                    <strong>שים לב:</strong> 38,412 ₪ מכל הפקדה יהיו נעולים ודרושים 3 תלושי שכר לכל משיכה. אם הסכום נמוך מ300אלף מומלץ להתייעץ לקבלת אפשרויות נוספות.
-                                </p>
-                            </div>
-                        </div>
-                    `;
+                    primaryType = 'policy';
                 }
-            } else if (currentAnswers.pension === 'no') {
-                preferredOption = 'פוליסת חיסכון';
-                recommendation = `
-                    <div class="success-card p-6 rounded-lg mb-4">
-                        <h4 class="font-bold text-green-800 mb-3">
-                            <i class="fas fa-piggy-bank mr-2"></i>
-                            המלצה: פוליסת חיסכון
-                        </h4>
-                        <p class="text-green-700 mb-4">
-                            מכיוון שאין לך קצבה מזערית הנדרשת לתיקון 190:
+            }
+
+            // 125ד note when Policy is primary and client is eligible
+            if (primaryType === 'policy' && currentAnswers.birth_year === '1948_before') {
+                recommendation += `
+                    <div class="mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                        <p class="text-yellow-800 text-sm">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            שים/י לב: סעיף 125ד אינו אוטומטי — כדי ליהנות מהחזר המס נדרשת פעולה אקטיבית של מכירה (רעיונית) והגשת דוח.
                         </p>
-                        <ul class="text-green-700 space-y-2">
-                            <li>• פוליסת חיסכון מאפשרת נזילות מלאה</li>
-                            <li>• ללא תנאי גיל או קצבה למשיכה</li>
-                            <li>• מתאים לצרכים גמישים</li>
-                        </ul>
                     </div>
                 `;
             }
 
-            // Add advice for high amounts
+            // --- Additional recommendations by amount ---
+            // High (≥400K): diversification card always
             if (currentAnswers.amount === 'high') {
                 recommendation += `
                     <div class="result-card p-6 rounded-lg mt-4">
@@ -642,9 +709,29 @@
                             המלצה נוספת - פיזור השקעות
                         </h4>
                         <p class="text-purple-700">
-                            .בסכומים גבוהים מומלץ לשקול פיזור בין שני המוצרים לניצול היתרונות של כל אחד מהם
+                            בסכומים גבוהים מומלץ לשקול פיזור בין שני המוצרים לניצול היתרונות של כל אחד מהם. 
                             מומלץ להתייעץ עם בעל רישיון לתכנון מיטבי.
                         </p>
+                    </div>
+                `;
+            }
+            // Medium (100–400K): add "tilt to Policy" ONLY when primary is T190 AND age < 60
+            else if (currentAnswers.amount === 'medium' && primaryType === 't190' && currentAnswers.age === 'under60') {
+                recommendation += `
+                    <div class="result-card p-6 rounded-lg mt-4">
+                        <h4 class="font-bold text-green-800 mb-3">
+                            <i class="fas fa-lightbulb mr-2"></i>
+                            המלצה נוספת - נטייה לפוליסת חיסכון (100–400 אלף ₪)
+                        </h4>
+                        <p class="text-green-700 mb-3">
+                            מאחר שההמלצה הראשית היא <strong>תיקון 190</strong>, אך <strong>הגיל מתחת ל-60</strong> וסכום ההשקעה <strong>100–400 אלף ₪</strong>, קיימת לרוב נטייה לשקול <strong>פוליסת חיסכון</strong> בזכות נזילות וגמישות משיכות.
+                        </p>
+                        <div class="mt-2 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                            <p class="text-yellow-800 text-sm">
+                                <i class="fas fa-info-circle mr-2"></i>
+                                יש לדייק את ההמלצה עם בעל רישיון, ${currentAnswers.age === 'under60' ? 'בהתחשב ב<strong>קרבה לגיל 60</strong> ו' : ''}בפרמטרים נוספים (מיסוי, אינפלציה, קצבה צפויה ותנאי הגוף המנהל).
+                            </p>
+                        </div>
                     </div>
                 `;
             }
@@ -664,7 +751,8 @@
             
             // Reset all buttons
             document.querySelectorAll('.answer-btn').forEach(btn => {
-                btn.classList.remove('selected', 'bg-blue-600', 'text-white');
+                btn.classList.remove('selected','bg-purple-600','bg-blue-600','text-white');
+                btn.setAttribute('aria-pressed','false');
             });
             
             // Scroll to top of simulation
@@ -676,10 +764,17 @@
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             console.log('מדריך השוואת השקעות פנסיוניות נטען בהצלחה');
-        }); 
+            document.addEventListener('keydown', function(e) {
+        if (e.target && e.target.classList && e.target.classList.contains('answer-btn') && (e.key === 'Enter' || e.key === ' ')) {
+            e.preventDefault();
+            e.target.click();
+        }
+    });
+    updateProgress();
+}); 
     </script>
     <!-- Privacy Banner (Hebrew, RTL, with dark border) -->
-  <div id="privacy-banner" class="fixed inset-x-0 bottom-0 z-50 hidden">
+  <div id="privacy-banner" role="region" aria-label="הודעת פרטיות" class="fixed inset-x-0 bottom-0 z-50 hidden">
     <div class="mx-auto max-w-5xl px-4 pb-4">
       <div class="rounded-t-md bg-white text-gray-800 border border-black text-xs">
         <div class="p-2 flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-4">
@@ -697,7 +792,7 @@
               למדיניות GitHub
             </a>
             <button id="privacy-accept"
-                    class="text-sm px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring">
+                    class="text-sm px-4 py-2 rounded-lg bg-purple-600 text-white hover:bg-blue-700 focus:outline-none focus:ring">
               הבנתי
             </button>
           </div>
@@ -737,8 +832,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
